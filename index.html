@@ -66,15 +66,18 @@
     .content {
       width: 90vw;
       max-width: 420px;
-      max-height: 80vh;
+      max-height: 100vh;
       overflow-y: auto;
       background: #fffaf3;
-      padding: 25px 20px;
+      padding: 20px 18px;
       border-radius: 20px;
       text-align: left;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       border: 2px solid #f0e6d6;
       position: relative;
+
+      height: auto; /* ❌ bỏ max-height */
+      overflow: hidden; /* ❌ bỏ scroll */
     }
 
     .content::before {
@@ -89,14 +92,17 @@
       font-family: 'Pacifico', cursive;
       font-size: 18px;
       margin-bottom: 15px;
+      margin-left: 15px;
     }
 
     .content p {
-      text-indent: 2em;
-      line-height: 1.6;
+      text-indent: 1em; /*bỏ thụt đầu dòng */
+      line-height: 1.3;
       font-size: 14px;
       font-family: 'Quicksand', sans-serif;
-      white-space: pre-line;
+      white-space: normal;
+      word-break: break-word;
+      opacity: 0;
     }
 
     /* Page 4 */
@@ -143,16 +149,43 @@
   <!-- Page 2 -->
   <div id="page2" class="page">
     <div class="content">
-      <h2>Dear em bé đáng iu nhất thế giới 💌</h2>
-      <p>Anh không biết nên bắt đầu từ đâu nhưng mà anh nghĩ anh nên bắt đầu từ ngày nhắn tin với em. Nói thế nào nhỉ, lần đầu tiên nói chuyện với em, anh cảm thấy mình như kiểu là quen nhau từ lâu lắm rồi ý. Mình khá là matching với nhau, đến nỗi anh đã nghĩ về 1 tương lai xa =)))))) hơi buồn cười nhỉ nhưng mà anh đã nghĩ như vậy đó. Em là 1 cô gái khá thú vị, thông minh,... em có đủ những yếu tố của 1 người con gái anh đang tìm kiếm, em khiến anh luôn phải “đau đầu”, lúc nào trong anh cũng như kiểu ba da bum mỗi lần gặp em, kiểu xốn xao, nhộn nhịp kiểu gì ý. Nói chung là anh đã phải lòng em mất rồi kkk. Không biết em có giống như anh không nhỉ? =)))))) Anh cứ bị tò mò ý. Là không biết cô gái này có muốn là người con gái của mình không ý nhở?</p>
+    <h2>Dear em bé đáng iu nhất thế giới 💌</h2>
+
+    <p>Anh không biết nên bắt đầu từ đâu nhưng mà anh nghĩ </p>
+    <p>anh nên bắt đầu từ ngày nhắn tin với em. Nói thế nào </p>
+    <p>nhỉ, lần đầu tiên nói chuyện với em, anh cảm thấy mình </p>
+    <p>như kiểu là quen nhau từ lâu lắm rồi ý. Mình khá là </p>
+    <p>matching với nhau, đến nỗi anh đã nghĩ về 1 tương lai </p>
+    <p>xa =)))))). Em là 1 cô gái khá thú vị, thông minh,...</p>
+    <p>em luôn biết cách khiến anh luôn phải “đau đầu". Nói </p>
+    <p>chung là anh đã phải lòng em mất rồi kkk. Không biết </p>
+    <p>em có giống như anh không nhỉ? =)))))). Anh cứ bị tò </p>
+    <p>mò ý. Là không biết cô gái này có muốn là người con </p>
+    <p>gái của mình không ý nhở?</p>
+
     </div>
   </div>
 
   <!-- Page 3 -->
   <div id="page3" class="page">
     <div class="content">
-      <p>Và hiện tại anh thấy hình như là suy đoán của anh là đúng. Em và anh cũng đã gắn bó và đồng hành đến nay đã hơn 1 tháng rồi. Anh nghĩ là đến lúc này anh nên làm 1 cái gì đó để chúng mình có những kỷ niệm về sau. Anh không muốn im lặng nữa, mặc dù anh biết cả anh và em đều muốn gì trong lúc này. Anh xấu tính nhỉ, anh biết điều đó nên anh đã vẽ ra cho chúng mình 1 kế hoạch thật là hoàn hảo và chỉn chu. Có lẽ khi em đọc được bức thư này thì chúng mình đã tận hưởng nó xong rồi và chúng mình đã đánh dấu nó bằng 1 cột mốc cực kỳ quan trọng. Anh muốn nói với em rằng Linh ơi, anh bị yêu em mất rồi. Anh thực sự rất muốn em trở thành người yêu của anh. Và em cho phép anh trở thành người được quan tâm, được chăm sóc, được bên cạnh em mỗi khi em gặp vấn đề trong cuộc sống để cho anh được lắng nghe và chia sẻ nha.
-      <br>I love you so much.</p>
+
+    <p>Và hiện tại anh thấy hình như là suy đoán của anh là </p>
+    <p>đúng. Em và anh cũng đã gắn bó và đồng hành đến nay </p>
+    <p>đã hơn 1 tháng rồi. Anh nghĩ là đến lúc này anh nên làm </p>
+    <p>1 cái gì đó để chúng mình có những kỷ niệm về sau. </p>
+    <p>Anh không muốn im lặng nữa, mặc dù anh biết cả anh </p>
+    <p>và em đều muốn gì trong lúc này. Anh xấu tính nhỉ, anh </p>
+    <p>biết điều đó nên anh đã vẽ ra cho chúng mình 1 kế </p>
+    <p>hoạch thật là hoàn hảo và chỉn chu. Có lẽ khi em đọc </p>
+    <p>được bức thư này thì chúng mình đã tận hưởng nó xong </p>
+    <p>rồi và chúng mình đã đánh dấu nó bằng 1 cột mốc cực </p>
+    <p>kỳ quan trọng. Anh muốn nói với em rằng Linh ơi, anh  </p>
+    <p>bị yêu em mất rồi. Anh thực sự rất muốn em trở thành </p>
+    <p>người yêu của anh. Và em cho phép anh trở thành người </p>
+    <p>được quan tâm chăm sóc, được bên cạnh em mỗi khi </p>
+    <p>em gặp vấn đề trong cuộc sống để cho anh được lắng </p>
+    <p>nghe và chia sẻ với em nha. I love you so much.</p>
     </div>
   </div>
 
@@ -168,17 +201,57 @@
     function openLetter() {
       page1.classList.remove("active");
       page2.classList.add("active");
+
+      typeParagraphs(document.querySelector("#page2 .content"));
     }
 
     page2.onclick = () => {
       page2.classList.remove("active");
       page3.classList.add("active");
+
+      typeParagraphs(document.querySelector("#page3 .content"));
     }
 
     page3.onclick = () => {
       page3.classList.remove("active");
       page4.classList.add("active");
     }
+
+    function typeParagraphs(container) {
+  const paragraphs = container.querySelectorAll("p");
+  let pIndex = 0;
+
+  function typeP(p) {
+    const text = p.innerText;
+    p.innerHTML = "";
+    p.style.opacity = 1;
+
+    let i = 0;
+
+    function typing() {
+      if (i < text.length) {
+        let char = text[i];
+
+        // fix dính chữ
+        if (char === " ") char = "\u00A0";
+
+        p.innerHTML += char;
+        i++;
+        setTimeout(typing, 15);
+      } else {
+        pIndex++;
+        if (pIndex < paragraphs.length) {
+          setTimeout(() => typeP(paragraphs[pIndex]), 120);
+        }
+      }
+    }
+
+    typing();
+  }
+
+  typeP(paragraphs[pIndex]);
+}
+
   </script>
 
 </body>
