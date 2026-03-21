@@ -1,280 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ngoc Linh 💌 </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngoc Linh 💌</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"> <text y=".9em" font-size="80">💖</text> </svg>'>
+<style>
+* { box-sizing: border-box; }
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-       padding: 0;
-      height: 100dvh;
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    .page {
-      display: none;
-      width: 100vw;
-      height: 100dvh;
-      position: fixed;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .active {
-      display: flex;
-    }
-
-    /* Page 1 */
-    #page1 {
-      background: #F2EEE3;
-      cursor: pointer;
-    }
-
-    #page1 img {
-      max-width: 90vw;
-      max-heigth: 80dvh;
-      margin: 0;
-      object-fit: contain;
-    }
-
-    .tap-text {
-      margin-top: 10px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      animation: blink 1.2s infinite;
-    }
-
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.2; }
-      100% { opacity: 1; }
-    }
-
-    /* Page 2 & 3 */
-    #page2, #page3, #page4 {
-      background: url('5.png') center/cover no-repeat;
-      height: 100dvh;
-    }
-
-    .content {
-      width: 90vw;
-      max-width: 420px;
-      max-height: 100vh;
-      overflow-y: auto;
-      background: #fffaf3;
-      padding: 20px 18px;
-      border-radius: 20px;
-      text-align: left;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 2px solid #f0e6d6;
-      position: relative;
-      max-height: 85dvh;
-      overflow: hidden; /* ❌ bỏ scroll */
-      z-index: 1;
-    }
-
-    .content::before {
-      content: "";
-      position: absolute;
-      inset: 10px;
-      border: 1px dashed #e0d5c3;
-      border-radius: 15px;
-    }
-
-    .content h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 20px;
-      margin-bottom: 15px;
-      margin-left: 15px;
-    }
-
-    .content p {
-      text-indent: 1em; /*bỏ thụt đầu dòng */
-      line-height: 1.4;
-      font-size: 16px;
-      font-family: 'Quicksand', sans-serif;
-      white-space: normal;
-      word-break: break-word;
-      opacity: 0;
-      /* margin: 2px 0; */
-      text-align: justify;
-    }
-
-    /* Page 4 */
-    .image-box {
-      width: 90vw;
-      max-width: 420px;
-      background: #fffaf3;
-      padding: 15px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 1;
-    }
-
-    .image-box img {
-      width: 100%;
-      border-radius: 15px;
-    }
-
-    .end-text {
-      margin-top: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards;
-      animation-delay: 0.5s;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .cursor {
-  display: inline-block;
-  width: 2px;
-  background: #000;
-  margin-left: 2px;
-  animation: blinkCursor 0.8s infinite;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  font-family: 'Quicksand', sans-serif;
 }
 
-@keyframes blinkCursor {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
-}
-
-.heart {
+/* PAGE */
+.page {
+  display: none;
+  width: 100vw;
+  height: 100dvh;
   position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.active { display: flex; }
+
+/* PAGE 1 */
+#page1 {
+  background: #F2EEE3;
+  cursor: pointer;
+}
+
+#page1 img {
+  max-width: 90vw;
+  max-height: 80dvh;
+}
+
+.tap-text {
+  margin-top: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.2; }
+}
+
+/* PAGE 2-4 */
+#page2, #page3, #page4 {
+  background: url('5.png') center/cover no-repeat;
+}
+
+/* CONTENT */
+.content {
+  width: 90vw;
+  max-width: 420px;
+  background: #fffaf3;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.content h2 {
+  font-family: 'Pacifico';
+}
+
+.content p {
+  opacity: 0;
+  text-align: justify;
+}
+
+/* PAGE 4 */
+#page4 {
+  position: fixed;
+}
+
+#heart-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.image-box {
+  z-index: 2;
+  width: 90vw;
+  max-width: 420px;
+  background: #fffaf3;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.end-text {
+  margin-top: 10px;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* HEART */
+.heart {
+  position: absolute;
   bottom: -20px;
   font-size: 18px;
   animation: floatUp linear forwards;
-  pointer-events: none;
-  z-index: 0; /* nằm dưới nội dung */
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 @keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(1) rotate(0deg);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-110vh) scale(1.4) rotate(360deg);
-    opacity: 0;
-  }
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-110vh); opacity: 0; }
 }
-
-  </style>
+</style>
 </head>
+
 <body>
 
-  <!-- Page 1 -->
-  <div id="page1" class="page active" onclick="openLetter()">
-    <img src="2.png">
-    <div class="tap-text">TAP TO OPEN</div>
-  </div>
+<!-- PAGE 1 -->
+<div id="page1" class="page active" onclick="openLetter()">
+  <img src="2.png">
+  <div class="tap-text">TAP TO OPEN</div>
+</div>
 
-  <!-- Page 2 -->
-  <div id="page2" class="page">
-    <div class="content">
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+  <div class="content">
     <h2>Dear em bé đáng iu nhất thế giới 💌</h2>
 
     <p>Anh không biết nên bắt đầu từ đâu nhưng mà anh nghĩ anh nên bắt đầu từ ngày nhắn tin với em. Nói thế nào nhỉ, lần đầu tiên nói chuyện với em, anh cảm thấy mình như kiểu là quen nhau từ lâu lắm rồi ý. Mình khá là matching với nhau, đến nỗi anh đã nghĩ về 1 tương lai xa =)))))) nghe hơi buồn cười nhỉ nhưng mà anh đã nghĩ như vậy đó. Em là 1 cô gái khá thú vị, thông minh,... em có đủ những yếu tố của 1 người con gái anh đang tìm kiếm, em luôn biết cách khiến anh phải “đau đầu” mỗi lần nói chuyện với em, lúc nào trong anh cũng như kiểu ba da bum mỗi lần gặp em, kiểu xốn xao, nhộn nhịp kiểu gì ý. Nói chung là anh đã phải lòng em mất rồi kkk. Không biết em có giống như anh không nhỉ? =)))))) Anh cứ bị tò mò ý. Là không biết cô gái này có muốn là người con gái của mình không ý nhở?</p>
 
     </div>
-  </div>
+</div>
 
-  <!-- Page 3 -->
-  <div id="page3" class="page">
-    <div class="content">
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+  <div class="content">
 
     <p>Và hiện tại anh thấy hình như suy đoán của anh là đúng. Em và anh cũng đã gắn bó và đồng hành đến nay đã hơn 1 tháng rồi. Anh nghĩ là đến lúc này anh nên làm 1 cái gì đó để chúng mình có những kỷ niệm về sau. Anh không muốn im lặng nữa, mặc dù anh biết cả anh và em đều muốn gì trong lúc này. Anh xấu tính nhỉ, anh biết điều đó nên anh đã vẽ ra 1 kế hoạch để có được trái tim của em. Có lẽ khi em đọc được bức thư này thì chúng mình đã tận hưởng nó xong rồi và chúng mình đã đánh dấu nó bằng 1 cột mốc cực kỳ quan trọng. Anh muốn nói với em rằng Linh ơi, anh bị yêu em mất rồi. Anh thực sự rất muốn em trở thành người yêu của anh. Và em cho phép anh trở thành người được quan tâm, được chăm sóc, được bên cạnh em mỗi khi em gặp vấn đề trong cuộc sống để cho anh được lắng nghe và chia sẻ nha.</p>
     <p>I love you so much. </p>
     </div>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+
+  <div id="heart-container"></div>
+
+  <div class="image-box">
+    <img src="NgocLinh.jpg">
+    <div class="end-text">💌 Our story begins 💖</div>
   </div>
 
-  <!-- Page 4 -->
-  <div id="page4" class="page">
-    <div class="image-box">
-      <img src="NgocLinh.jpg">
-      <div class="end-text">💌 Our story begins 💖</div>
-    </div>
-  </div>
+</div>
 
-  <script>
-    function openLetter() {
-      page1.classList.remove("active");
-      page2.classList.add("active");
+<script>
 
-      startHearts();
+/* CHUYỂN PAGE */
+function openLetter() {
+  page1.classList.remove("active");
+  page2.classList.add("active");
 
-      typeParagraphs(document.querySelector("#page2 .content"));
-    }
+  typeParagraphs(document.querySelector("#page2 .content"));
+}
 
-    page2.onclick = () => {
-      page2.classList.remove("active");
-      page3.classList.add("active");
+page2.onclick = () => {
+  page2.classList.remove("active");
+  page3.classList.add("active");
 
-      startHearts();
- 
-      typeParagraphs(document.querySelector("#page3 .content"));
-    }
+  typeParagraphs(document.querySelector("#page3 .content"));
+}
 
-    page3.onclick = () => {
-      page3.classList.remove("active");
-      page4.classList.add("active");
-    }
+page3.onclick = () => {
+  page3.classList.remove("active");
+  page4.classList.add("active");
 
-    function typeParagraphs(container) {
+  startHearts(); // 👉 chỉ chạy ở page 4
+}
+
+/* TYPE TEXT */
+function typeParagraphs(container) {
   const paragraphs = container.querySelectorAll("p");
-  let pIndex = 0;
+  let index = 0;
 
-  function typeP(p) {
+  function type(p) {
     const text = p.innerText;
     p.innerHTML = "";
     p.style.opacity = 1;
 
     let i = 0;
-
-    // tạo span chứa text riêng
-    const textSpan = document.createElement("span");
-    p.appendChild(textSpan);
-
-    // tạo cursor
-    const cursor = document.createElement("span");
-    cursor.className = "cursor";
-    p.appendChild(cursor);
+    const span = document.createElement("span");
+    p.appendChild(span);
 
     function typing() {
       if (i < text.length) {
-        textSpan.textContent += text[i]; // ✅ an toàn hơn innerHTML
+        span.textContent += text[i];
         i++;
-
-        setTimeout(typing, 30);
+        setTimeout(typing, 25);
       } else {
-        cursor.remove();
-
-        pIndex++;
-        if (pIndex < paragraphs.length) {
-          setTimeout(() => typeP(paragraphs[pIndex]), 300);
+        index++;
+        if (index < paragraphs.length) {
+          setTimeout(() => type(paragraphs[index]), 300);
         }
       }
     }
@@ -282,36 +226,37 @@
     typing();
   }
 
-  typeP(paragraphs[pIndex]);
+  type(paragraphs[index]);
 }
 
-    function startHearts() {
+/* HEART EFFECT */
+let heartStarted = false;
+
+function startHearts() {
+  if (heartStarted) return;
+  heartStarted = true;
+
+  const container = document.getElementById("heart-container");
+
   setInterval(() => {
     const heart = document.createElement("div");
     heart.className = "heart";
 
-    const hearts = ["💖","💗","💘","💝","❤️"];
-    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+    const icons = ["💖","💗","💘","💝","❤️"];
+    heart.innerHTML = icons[Math.floor(Math.random()*icons.length)];
 
-    // vị trí random
-    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.left = Math.random()*100 + "%";
+    heart.style.fontSize = (14 + Math.random()*16) + "px";
+    heart.style.animationDuration = (3 + Math.random()*3) + "s";
 
-    // size random
-    heart.style.fontSize = (14 + Math.random() * 16) + "px";
+    container.appendChild(heart);
 
-    // tốc độ bay random
-    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    setTimeout(() => heart.remove(), 6000);
 
-    document.body.appendChild(heart);
-
-    // xoá sau khi bay xong
-    setTimeout(() => {
-      heart.remove();
-    }, 6000);
-  }, 100); // 👉 càng nhỏ càng nhiều tim
+  }, 120);
 }
 
-  </script>
+</script>
 
 </body>
 </html>
