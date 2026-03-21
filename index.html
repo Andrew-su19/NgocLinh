@@ -18,16 +18,19 @@
       margin: 0;
       font-family: 'Quicksand', sans-serif;
     }
+.page {
+  display: none;
+  width: 100vw;
+  height: 100vh;
 
-    .page {
-      display: none;
-      width: 100vw;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      overflow: hidden;
-    }
+  padding: 10px; /* 👈 tránh sát viền */
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  overflow: hidden;
+}
 
     .active {
       display: flex;
@@ -64,21 +67,24 @@
     }
 
     .content {
-      width: 90vw;
-      max-width: 420px;
-      max-height: 100vh;
-      overflow-y: auto;
-      background: #fffaf3;
-      padding: 20px 18px;
-      border-radius: 20px;
-      text-align: left;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 2px solid #f0e6d6;
-      position: relative;
+  width: 92vw;
+  max-width: 420px;
 
-      height: auto; /* ❌ bỏ max-height */
-      overflow: hidden; /* ❌ bỏ scroll */
-    }
+  height: 75vh; /* 👈 khống chế vừa màn hình */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden; /* ❌ không scroll */
+
+  background: #fffaf3;
+  padding: 18px 16px;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 2px solid #f0e6d6;
+  position: relative;
+}
 
     .content::before {
       content: "";
@@ -88,22 +94,23 @@
       border-radius: 15px;
     }
 
-    .content h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 18px;
-      margin-bottom: 15px;
-      margin-left: 15px;
-    }
+   .content h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 17px;
+  margin-bottom: 8px;
+  text-align: left;
+}
 
     .content p {
-      text-indent: 1em; /*bỏ thụt đầu dòng */
-      line-height: 1.3;
-      font-size: 14px;
-      font-family: 'Quicksand', sans-serif;
-      white-space: normal;
-      word-break: break-word;
-      opacity: 0;
-    }
+  margin: 2px 0; /* 👈 giảm khoảng cách */
+  line-height: 1.3;
+  font-size: 13px; /* 👈 nhỏ lại để fit */
+  white-space: normal;
+  word-break: break-word;
+  opacity: 0;
+
+  text-indent: 0; /* ❌ bỏ lệch dòng */
+}
 
     /* Page 4 */
     .image-box {
