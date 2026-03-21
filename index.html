@@ -75,9 +75,9 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       border: 2px solid #f0e6d6;
       position: relative;
-
       height: auto; /* ❌ bỏ max-height */
       overflow: hidden; /* ❌ bỏ scroll */
+      z-index: 1;
     }
 
     .content::before {
@@ -118,6 +118,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 1;
     }
 
     .image-box img {
@@ -138,6 +139,44 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .cursor {
+  display: inline-block;
+  width: 2px;
+  background: #000;
+  margin-left: 2px;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  animation: floatUp linear forwards;
+  pointer-events: none;
+  z-index: 0; /* nằm dưới nội dung */
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.4) rotate(360deg);
+    opacity: 0;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -153,7 +192,7 @@
     <div class="content">
     <h2>Dear em bé đáng iu nhất thế giới 💌</h2>
 
-    <p>Anh không biết nên bắt đầu từ đâu nhưng mà anh nghĩ anh nên bắt đầu từ ngày nhắn tin với em. Nói thế nào nhỉ, lần đầu tiên nói chuyện với em, anh cảm thấy mình như kiểu là quen nhau từ lâu lắm rồi ý. Mình khá là matching với nhau, đến nỗi anh đã nghĩ về 1 tương lai xa =)))))) hơi buồn cười nhỉ nhưng mà anh đã nghĩ như vậy đó. Em là 1 cô gái khá thú vị, thông minh,... em có đủ những yếu tố của 1 người con gái anh đang tìm kiếm, em khiến anh luôn phải “đau đầu”, lúc nào trong anh cũng như kiểu ba da bum mỗi lần gặp em, kiểu xốn xao, nhộn nhịp kiểu gì ý. Nói chung là anh đã phải lòng em mất rồi kkk. Không biết em có giống như anh không nhỉ? =)))))) Anh cứ bị tò mò ý. Là không biết cô gái này có muốn là người con gái của mình không ý nhở?</p>
+    <p>Anh không biết nên bắt đầu từ đâu nhưng mà anh nghĩ anh nên bắt đầu từ ngày nhắn tin với em. Nói thế nào nhỉ, lần đầu tiên nói chuyện với em, anh cảm thấy mình như kiểu là quen nhau từ lâu lắm rồi ý. Mình khá là matching với nhau, đến nỗi anh đã nghĩ về 1 tương lai xa =)))))) nghe hơi buồn cười nhỉ nhưng mà anh đã nghĩ như vậy đó. Em là 1 cô gái khá thú vị, thông minh,... em có đủ những yếu tố của 1 người con gái anh đang tìm kiếm, em luôn biết cách khiến anh phải “đau đầu” mỗi lần nói chuyện với em, lúc nào trong anh cũng như kiểu ba da bum mỗi lần gặp em, kiểu xốn xao, nhộn nhịp kiểu gì ý. Nói chung là anh đã phải lòng em mất rồi kkk. Không biết em có giống như anh không nhỉ? =)))))) Anh cứ bị tò mò ý. Là không biết cô gái này có muốn là người con gái của mình không ý nhở?</p>
 
     </div>
   </div>
@@ -162,7 +201,7 @@
   <div id="page3" class="page">
     <div class="content">
 
-    <p>Và hiện tại anh thấy hình như là suy đoán của anh là đúng. Em và anh cũng đã gắn bó và đồng hành đến nay đã hơn 1 tháng rồi. Anh nghĩ là đến lúc này anh nên làm 1 cái gì đó để chúng mình có những kỷ niệm về sau. Anh không muốn im lặng nữa, mặc dù anh biết cả anh và em đều muốn gì trong lúc này. Anh xấu tính nhỉ, anh biết điều đó nên anh đã vẽ ra cho chúng mình 1 kế hoạch thật là hoàn hảo và chỉn chu. Có lẽ khi em đọc được bức thư này thì chúng mình đã tận hưởng nó xong rồi và chúng mình đã đánh dấu nó bằng 1 cột mốc cực kỳ quan trọng. Anh muốn nói với em rằng Linh ơi, anh bị yêu em mất rồi. Anh thực sự rất muốn em trở thành người yêu của anh. Và em cho phép anh trở thành người được quan tâm, được chăm sóc, được bên cạnh em mỗi khi em gặp vấn đề trong cuộc sống để cho anh được lắng nghe và chia sẻ nha.</p>
+    <p>Và hiện tại anh thấy hình như suy đoán của anh là đúng. Em và anh cũng đã gắn bó và đồng hành đến nay đã hơn 1 tháng rồi. Anh nghĩ là đến lúc này anh nên làm 1 cái gì đó để chúng mình có những kỷ niệm về sau. Anh không muốn im lặng nữa, mặc dù anh biết cả anh và em đều muốn gì trong lúc này. Anh xấu tính nhỉ, anh biết điều đó nên anh đã vẽ ra 1 kế hoạch để có được trái tim của em. Có lẽ khi em đọc được bức thư này thì chúng mình đã tận hưởng nó xong rồi và chúng mình đã đánh dấu nó bằng 1 cột mốc cực kỳ quan trọng. Anh muốn nói với em rằng Linh ơi, anh bị yêu em mất rồi. Anh thực sự rất muốn em trở thành người yêu của anh. Và em cho phép anh trở thành người được quan tâm, được chăm sóc, được bên cạnh em mỗi khi em gặp vấn đề trong cuộc sống để cho anh được lắng nghe và chia sẻ nha.</p>
     <p>I love you so much. </p>
     </div>
   </div>
@@ -180,6 +219,8 @@
       page1.classList.remove("active");
       page2.classList.add("active");
 
+      startHearts();
+
       typeParagraphs(document.querySelector("#page2 .content"));
     }
 
@@ -187,6 +228,8 @@
       page2.classList.remove("active");
       page3.classList.add("active");
 
+      startHearts();
+ 
       typeParagraphs(document.querySelector("#page3 .content"));
     }
 
@@ -200,33 +243,67 @@
   let pIndex = 0;
 
   function typeP(p) {
-  const text = p.innerText;
-  p.innerHTML = "";
-  p.style.opacity = 1;
+    const text = p.innerText;
+    p.innerHTML = "";
+    p.style.opacity = 1;
 
-  let i = 0;
+    let i = 0;
 
-  function typing() {
-    if (i < text.length) {
-      let char = text[i];
+    // tạo span chứa text riêng
+    const textSpan = document.createElement("span");
+    p.appendChild(textSpan);
 
-      // ✅ giữ nguyên space bình thường
-      p.innerHTML += char;
+    // tạo cursor
+    const cursor = document.createElement("span");
+    cursor.className = "cursor";
+    p.appendChild(cursor);
 
-      i++;
-      setTimeout(typing, 15);
-    } else {
-      pIndex++;
-      if (pIndex < paragraphs.length) {
-        setTimeout(() => typeP(paragraphs[pIndex]), 120);
+    function typing() {
+      if (i < text.length) {
+        textSpan.textContent += text[i]; // ✅ an toàn hơn innerHTML
+        i++;
+
+        setTimeout(typing, 30);
+      } else {
+        cursor.remove();
+
+        pIndex++;
+        if (pIndex < paragraphs.length) {
+          setTimeout(() => typeP(paragraphs[pIndex]), 300);
+        }
       }
     }
+
+    typing();
   }
 
-  typing();
+  typeP(paragraphs[pIndex]);
 }
 
-  typeP(paragraphs[pIndex]);
+    function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+
+    const hearts = ["💖","💗","💘","💝","❤️"];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+    // vị trí random
+    heart.style.left = Math.random() * 100 + "vw";
+
+    // size random
+    heart.style.fontSize = (14 + Math.random() * 16) + "px";
+
+    // tốc độ bay random
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    // xoá sau khi bay xong
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }, 50); // 👉 càng nhỏ càng nhiều tim
 }
 
   </script>
