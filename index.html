@@ -218,7 +218,7 @@ function typeParagraphs(container) {
       if (i < text.length) {
         span.textContent += text[i];
         i++;
-        setTimeout(typing, 25);
+        setTimeout(typing, 40 + Math.random() * 60);
       } else {
         index++;
         if (index < paragraphs.length) {
